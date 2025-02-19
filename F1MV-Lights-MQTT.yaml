@@ -1,0 +1,375 @@
+blueprint:
+  name: F1MV-Lights-MQTT
+  description:
+    "\n\nDo additional actions in Homeassistant, when F1MV-Lights-Integration triggers an event. \n\n
+
+    F1MV-Lights-Integration is a great integration to F1 Multiviewer.
+    https://multiviewer.app/ \n\n
+
+    With the F1MV-Lights-Integration you can set all your controllable lights to a specific color, when different events occur (e.g. different flag colors)
+    \nTake a look here for further information.
+    https://github.com/JustJoostNL/F1MV-Lights-Integration
+    \n\n
+    This Blueprint is based on the MQTT integration and will automatically trigger your lights or group of lights you setup.\n
+    Note: You need to setup the MQTT Integration in F1MV-Lights-Integration!
+    \n\n
+    <b>Please make sure to send ContolType 'On' with all your actions, else the event will be not send over mqtt.</b>
+    \n\n"
+  domain: automation
+  input:
+    target_light:
+      name: Lights
+      description: Choose your lights you want to use
+      selector:
+        target:
+          entity:
+            - domain: light
+    static:
+      name: Static behaviour
+      description: Do you want to turn off the lights instead of using the action defined color and brightness?
+      selector:
+        select:
+          options:
+            - "Yes"
+            - "No"
+    static_event:
+      name: Static Event
+      description: Additional action to run for static event.
+      default: []
+      selector:
+        action:
+    green_flag:
+      name: Green Flag
+      description: Additional action to run for green Flag.
+      default: []
+      selector:
+        action:
+    yellow_flag:
+      name: Yellow Flag
+      description: Additional action to run for yellow Flag.
+      default: []
+      selector:
+        action:
+    red_flag:
+      name: Red Flag
+      description: Additional action to run for red Flag.
+      default: []
+      selector:
+        action:
+    safety_car:
+      name: Safety Car
+      description: Additional action to run for Safety Car.
+      default: []
+      selector:
+        action:
+    virtual_safety_car:
+      name: Virtual Safety Car
+      description: Additional action to run for VSC.
+      default: []
+      selector:
+        action:
+    virtual_safety_car_ending:
+      name: Virtual Safety Car Ending
+      description: Additional action to run for VSC ending.
+      default: []
+      selector:
+        action:
+    fastest_lap:
+      name: Fastest Lap
+      description: Additional action to run for fastest Lap.
+      default: []
+      selector:
+        action:
+    session_ended:
+      name: Session Ended
+      description: Additional action to run for session ended.
+      default: []
+      selector:
+        action:
+    chequered_flag:
+      name: Chequered Flag
+      description: Additional action to run for checkered Flag.
+      default: []
+      selector:
+        action:
+    blue_flag:
+      name: Blue Flag
+      description: Additional action to run for blue Flag.
+      default: []
+      selector:
+        action:
+    drs_enabled:
+      name: DRS enabled
+      description: Additional action to run for DRS enabled.
+      default: []
+      selector:
+        action:
+    drs_disabled:
+      name: DRS disabled
+      description: Additional action to run for DRS disabled.
+      default: []
+      selector:
+        action:
+    pit_lane_entry_closed:
+      name: Pit Lane Entry Closed
+      description: Additional action to run for Pit Lane entry closed.
+      default: []
+      selector:
+        action:
+    pit_exit_open:
+      name: Pit Exit Open
+      description: Additional action to run for Pit Exit open.
+      default: []
+      selector:
+        action:
+    pit_entry_closed:
+      name: Pit Entry Closed
+      description: Additional action to run for Pit Entry closed.
+      default: []
+      selector:
+        action:
+    session_start_delayed:
+      name: Session Start Delayed
+      description: Additional action to run for Session Start delayed.
+      default: []
+      selector:
+        action:
+    session_duration_changed:
+      name: Session Duration Changed
+      description: Additional action to run for Session duration changed.
+      default: []
+      selector:
+        action:
+    lap_time_deleted:
+      name: Lap Time Deleted
+      description: Additional action to run for Lap Time deleted.
+      default: []
+      selector:
+        action:
+    lap_time_reinstated:
+      name: Lap Time Reinstated
+      description: Additional action to run for Lap Time reinstated.
+      default: []
+      selector:
+        action:
+    lapped_cars_may_overtake:
+      name: Lapped Cars May Overtake
+      description: Additional action to run for lapped Cars may overtake.
+      default: []
+      selector:
+        action:
+    lapped_cars_may_not_overtake:
+      name: Lapped Cars May Not Overtake
+      description: Additional action to run for lapped Cars may not overtake.
+      default: []
+      selector:
+        action:
+    normal_grip_conditions:
+      name: Normal Grip Conditions
+      description: Additional action to run for normal Grip conditions.
+      default: []
+      selector:
+        action:
+    off_track_and_continued:
+      name: Off Track And Continued
+      description: Additional action to run for Off Track and continued.
+      default: []
+      selector:
+        action:
+    spun_and_continued:
+      name: Spun And Continued
+      description: Additional action to run for Spun and continued.
+      default: []
+      selector:
+        action:
+    missed_apex:
+      name: Missed Apex
+      description: Additional action to run for missed Apex.
+      default: []
+      selector:
+        action:
+    car_stopped:
+      name: Car Stopped
+      description: Additional action to run for Car stopped.
+      default: []
+      selector:
+        action:
+    medical_car:
+      name: Medical Car
+      description: Additional action to run for medical Car.
+      default: []
+      selector:
+        action:
+    incident_noted:
+      name: Incident Noted
+      description: Additional action to run for Incident noted.
+      default: []
+      selector:
+        action:
+    incident_under_investigation:
+      name: Incident Under Investigation
+      description: Additional action to run for Incident under invenstigation.
+      default: []
+      selector:
+        action:
+    incident_investigation_after_session:
+      name: Incident Investigation After Session
+      description: Additional action to run for Incident Invenstigation after Session.
+      default: []
+      selector:
+        action:
+    incident_no_further_action:
+      name: Incident No Further Action
+      description: Additional action to run for Incident no further Action.
+      default: []
+      selector:
+        action:
+    incident_no_further_investigation:
+      name: Incident No Further Investigation
+      description: Additional action to run for Incident no further Investigation.
+      default: []
+      selector:
+        action:
+    stop_go_penalty:
+      name: Stop And Go Penalty
+      description: Additional action to run for Stop and Go Penalty.
+      default: []
+      selector:
+        action:
+    track_surface_slippery:
+      name: Track Surface Slippery
+      description: Additional action to run for Track Surface slippery.
+      default: []
+      selector:
+        action:
+    low_grip_conditions:
+      name: Low Grip Conditions
+      description: Additional action to run for low Grip Conditions.
+      default: []
+      selector:
+        action:
+    session_start_aborted:
+      name: Session Start Aborted
+      description: Additional action to run for Session Start aborted.
+      default: []
+      selector:
+        action:
+    drive_through_penalty:
+      name: Drive Through Penalty
+      description: Additional action to run for drive through Penalty.
+      default: []
+      selector:
+        action:
+
+triggers:
+  - trigger: mqtt
+    topic: F1MV-Lights-Integration/#
+    value_template: "{{ value_json.event }}"
+
+actions:
+  - variables:
+      event: "{{trigger.payload_json.event}}"
+      brightness: "{{trigger.payload_json.brightness*100}}"
+      r: "{{trigger.payload_json.color.r}}"
+      g: "{{trigger.payload_json.color.g}}"
+      b: "{{trigger.payload_json.color.b}}"
+      static_choose: !input static
+
+  - action: >
+      {% if static_choose == "Yes" and event == "Static" %}
+      light.turn_off
+      {% else %}
+      light.turn_on
+      {% endif %}
+    target: !input target_light
+    data: >
+      {% if static_choose != "Yes" or event != "Static" %}
+        {{ dict(rgb_color = [r, g, b]) }}
+      {% else %}
+        {}
+      {% endif %}
+
+    #data:
+    #rgb_color:
+    #- "{{r}}"
+    #- "{{g}}"
+    #- "{{b}}"
+    #brightness_pct: "{{brightness}}"
+
+  - choose:
+      - conditions: '{{event=="Static"}}'
+        sequence: !input static_event
+      - conditions: '{{event=="GreenFlag"}}'
+        sequence: !input green_flag
+      - conditions: '{{event=="YellowFlag"}}'
+        sequence: !input yellow_flag
+      - conditions: '{{event=="RedFlag"}}'
+        sequence: !input red_flag
+      - conditions: '{{event=="SafetyCar"}}'
+        sequence: !input safety_car
+      - conditions: '{{event=="VirtualSafetyCar"}}'
+        sequence: !input virtual_safety_car
+      - conditions: '{{event=="VirtualSafetyCarEnding"}}'
+        sequence: !input virtual_safety_car_ending
+      - conditions: '{{event=="FastestLap"}}'
+        sequence: !input fastest_lap
+      - conditions: '{{event=="SessionEnded"}}'
+        sequence: !input session_ended
+      - conditions: '{{event=="ChequeredFlag"}}'
+        sequence: !input chequered_flag
+      - conditions: '{{event=="BlueFlag"}}'
+        sequence: !input blue_flag
+      - conditions: '{{event=="DrsEnanbled"}}'
+        sequence: !input drs_enabled
+      - conditions: '{{event=="DrsDisabled"}}'
+        sequence: !input drs_disabled
+      - conditions: '{{event=="PitLaneEntryClosed"}}'
+        sequence: !input pit_lane_entry_closed
+      - conditions: '{{event=="PitExitOpen"}}'
+        sequence: !input pit_exit_open
+      - conditions: '{{event=="PitEnryClosed"}}'
+        sequence: !input pit_entry_closed
+      - conditions: '{{event=="SessionStartDelayed"}}'
+        sequence: !input session_start_delayed
+      - conditions: '{{event=="SessionDurationChanged"}}'
+        sequence: !input session_duration_changed
+      - conditions: '{{event=="LapTimeDeleted"}}'
+        sequence: !input lap_time_deleted
+      - conditions: '{{event=="LapTimeReinstated"}}'
+        sequence: !input lap_time_reinstated
+      - conditions: '{{event=="LappedCarsMayOvertake"}}'
+        sequence: !input lapped_cars_may_overtake
+      - conditions: '{{event=="LappedCarsMayNotOvertake"}}'
+        sequence: !input lapped_cars_may_not_overtake
+      - conditions: '{{event=="NormalGripConditions"}}'
+        sequence: !input normal_grip_conditions
+      - conditions: '{{event=="OffTrackAndContinued"}}'
+        sequence: !input off_track_and_continued
+      - conditions: '{{event=="SpunAndContinued"}}'
+        sequence: !input spun_and_continued
+      - conditions: '{{event=="MissedApex"}}'
+        sequence: !input missed_apex
+      - conditions: '{{event=="CarStopped"}}'
+        sequence: !input car_stopped
+      - conditions: '{{event=="MedicalCar"}}'
+        sequence: !input medical_car
+      - conditions: '{{event=="IncidentNoted"}}'
+        sequence: !input incident_noted
+      - conditions: '{{event=="IncidentUnderInvestigation"}}'
+        sequence: !input incident_under_investigation
+      - conditions: '{{event=="IncidentInvestigationAfterSession"}}'
+        sequence: !input incident_investigation_after_session
+      - conditions: '{{event=="IncidentNoFurtherAction"}}'
+        sequence: !input incident_no_further_action
+      - conditions: '{{event=="IncidentNoFurtherInvestigation"}}'
+        sequence: !input incident_no_further_investigation
+      - conditions: '{{event=="StopGoPenalty"}}'
+        sequence: !input stop_go_penalty
+      - conditions: '{{event=="TrackSurfaceSlippery"}}'
+        sequence: !input track_surface_slippery
+      - conditions: '{{event=="LowGripConditions"}}'
+        sequence: !input low_grip_conditions
+      - conditions: '{{event=="SessionStartAborted"}}'
+        sequence: !input session_start_aborted
+      - conditions: '{{event=="DriveThroughPenalty"}}'
+        sequence: !input drive_through_penalty
