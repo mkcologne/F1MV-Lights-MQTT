@@ -1,5 +1,5 @@
 # F1MV-Lights-MQTT
-Blueprint for the MQTT Integration of F1MV-Lights Multiviewer Integration
+## Blueprint for the MQTT Integration of F1MV-Lights Multiviewer Integration
 
 Do additional actions in Homeassistant, when F1MV-Lights-Integration triggers an event. 
 
