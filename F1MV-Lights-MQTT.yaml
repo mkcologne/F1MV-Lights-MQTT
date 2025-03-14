@@ -297,7 +297,7 @@ actions:
     data: >
       {% if static_choose != "Yes" or control_type != "Off" %}
       {{ dict(rgb_color = [r, g, b]) }}
-      brightness_pct = {{trigger.payload_json.brightness}}
+      
       {% else %}
         {}
       {% endif %}
