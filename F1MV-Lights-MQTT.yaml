@@ -297,7 +297,6 @@ actions:
     data: >
       {% if static_choose != "Yes" or control_type != "Off" %}
       {{ dict(rgb_color = [r, g, b]) }}
-      
       {% else %}
         {}
       {% endif %}
