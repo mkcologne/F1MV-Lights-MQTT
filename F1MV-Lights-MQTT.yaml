@@ -280,6 +280,7 @@ triggers:
 actions:
   - variables:
       event: "{{trigger.payload_json.event}}"
+      control_type: "{{trigger.payload_json.controlType}}"
       brightness: "{{trigger.payload_json.brightness*100}}"
       r: "{{trigger.payload_json.color.r}}"
       g: "{{trigger.payload_json.color.g}}"
@@ -287,14 +288,14 @@ actions:
       static_choose: !input static
 
   - action: >
-      {% if static_choose == "Yes" and event == "Static" %}
+      {% if static_choose == "Yes" and control_type == "Off" %}
       light.turn_off
       {% else %}
       light.turn_on
       {% endif %}
     target: !input target_light
     data: >
-      {% if static_choose != "Yes" or event != "Static" %}
+      {% if static_choose != "Yes" or control_type != "Off" %}
         {{ dict(rgb_color = [r, g, b]) }}
       {% else %}
         {}
