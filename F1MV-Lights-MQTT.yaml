@@ -16,12 +16,12 @@ blueprint:
     \n\n
     <b>Please make sure to send ContolType 'On' with all your actions, else the event will be not send over mqtt.</b>
     \n\n
-     ___________________________________________________________________________\n
-    |   <b>Important!<b/>                                                         |\n
-    |   Because 'static' does not come as an event you will need to add an        |\n
-    |   additional Action with type 'off' to trigger static actions and make use  |\n
-    |   of the turnLightsOff feature!                                             |\n
-     ___________________________________________________________________________\n"
+     ___________________________________________________________________________ \n
+    |   <b>Important!<b/>                                                         | \n
+    |   Because 'static' does not come as an event you will need to add an        | \n
+    |   additional Action with type 'off' to trigger static actions and make use  | \n
+    |   of the turnLightsOff feature!                                             | \n
+     ___________________________________________________________________________ \n"
     
   source_url: https://github.com/mkcologne/F1MV-Lights-MQTT/blob/main/F1MV-Lights-MQTT.yaml
   domain: automation
