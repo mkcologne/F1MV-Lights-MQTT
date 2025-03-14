@@ -17,7 +17,7 @@ blueprint:
     <b>Please make sure to send ContolType 'On' with all your actions, else the event will be not send over mqtt.</b>
     \n\n
     
-    <b style="color:red;">Important!<b/>
+    <b>Important!<b/>
     \n
     Because 'static' does not come as an event you will need to add an
     \n\n
