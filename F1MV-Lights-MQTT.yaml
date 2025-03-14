@@ -18,14 +18,9 @@ blueprint:
     \n\n
     
     <b>Important!<b/>
-    \n
     Because 'static' does not come as an event you will need to add an
-    \n\n
     additional Action with type 'off' to trigger static actions and make use
-    \n\n
-    of the turnLightsOff feature!
-    \n\n
-    \n\n"
+    of the turnLightsOff feature!"
     
   source_url: https://github.com/mkcologne/F1MV-Lights-MQTT/blob/main/F1MV-Lights-MQTT.yaml
   domain: automation
