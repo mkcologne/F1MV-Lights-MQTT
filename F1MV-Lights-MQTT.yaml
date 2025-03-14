@@ -309,7 +309,7 @@ actions:
     #brightness_pct: "{{brightness}}"
 
   - choose:
-      - conditions: '{{event=="Static"}}'
+      - conditions: '{{control_type=="Off"}}'
         sequence: !input static_event
       - conditions: '{{event=="GreenFlag"}}'
         sequence: !input green_flag
