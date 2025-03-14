@@ -35,7 +35,7 @@ blueprint:
           entity:
             - domain: light
     static:
-      name: Static behaviour
+      name: Static(Off) behaviour
       description: Do you want to turn off the lights instead of using the action defined color and brightness?
       default: "No"
       selector:
@@ -44,8 +44,8 @@ blueprint:
             - "Yes"
             - "No"
     static_event:
-      name: Static Event
-      description: Additional action to run for static event.
+      name: Static Event (Off)
+      description: Additional action to run for static event (Off).
       default: []
       selector:
         action:
