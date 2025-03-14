@@ -296,7 +296,7 @@ actions:
     target: !input target_light
     data: >
       {% if static_choose != "Yes" or control_type != "Off" %}
-      {{ dict(rgb_color = [r, g, b]) }}
+      rgb_color = [r, g, b]
       {% else %}
         {}
       {% endif %}
