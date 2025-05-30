@@ -288,14 +288,14 @@ actions:
       static_choose: !input static
 
   - action: >
-      {% if static_choose == "Yes" and control_type == "Off" %}
+      {% if static_choose == "Yes" and control_type == "off" %}
       light.turn_off
       {% else %}
       light.turn_on
       {% endif %}
     target: !input target_light
     data: >
-      {% if static_choose != "Yes" or control_type != "Off" %}
+      {% if static_choose != "Yes" or control_type != "off" %}
       {{ dict(rgb_color = [r, g, b],brightness_pct = brightness) }}
       {% else %}
         {}
