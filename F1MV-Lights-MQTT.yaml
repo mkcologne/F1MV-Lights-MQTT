@@ -280,7 +280,7 @@ triggers:
 actions:
   - variables:
       event: "{{trigger.payload_json.event}}"
-      control_type: "{{trigger.payload_json.controlType}}"
+      control_type: "{{trigger.payload_json.type}}"
       brightness: "{{trigger.payload_json.brightness}}"
       r: "{{trigger.payload_json.color.r}}"
       g: "{{trigger.payload_json.color.g}}"
